@@ -4,7 +4,7 @@
   <label class="label">
     <span class="label-text">How can we help ?</span>
   </label>
-    <%= form.text_field :query,:authenticity_token => false, :class => "input input-bordered w-full",:placeholder => "What are you looking for ?" , :value => @query, data:{search_target:'inputsearch'} %>
+    <%= form.text_field :query,:authenticity_token => false, :class => "input input-bordered w-full",:placeholder => "What are you looking for ?" , :value => @query, data:{search_target:'inputsearch',action:'input->search#showLoading'} %>
 <% end %>
 
   </div>

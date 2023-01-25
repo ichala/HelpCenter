@@ -16,7 +16,7 @@ export default class extends Controller {
   }
 
   get systemDefault () {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'halloween' : 'night'
   }
 
   get theme () {

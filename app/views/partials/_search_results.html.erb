@@ -1,5 +1,11 @@
+<div class="flex flex-col justify-center items-center w-full">
+ <div class="bg-base-100 p-4 rounded-md w-full max-w-2xl">
+ <div data-search-target="loading" class="loading hidden flex justify-center  items-center ">
+        <div class="flex flex-col items-center gap-2">
+          <div class="animate-spin rounded-full h-12 w-12 border-b-4 border-primary/60" > </div>
+        </div>
+  </div>
  <% if (@articles.length > 0) %>
-  <h1 class="display-5">Search Results :</h1>
   <% @articles.each do |article| %>
     <div class="card mt-3">
       <div class="card-header">
@@ -10,8 +16,10 @@
       </div>
     </div>
   <% end %>
+  </div>
 <% else %>
   <div class="alert alert-danger" role="alert">
     No Results Found
   </div>
 <% end %>
+  </div>
