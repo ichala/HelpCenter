@@ -1,0 +1,19 @@
+<div class=" min-h-screen bg-base-200">
+  <div class=" p-10 text-center w-full ">
+    <%= form_with(url: root_path, method: :get, data: {controller:'search', search_target:'form', turbo_frame: "results", turbo_action:'advance' } ) do |form| %>
+  <label class="label">
+    <span class="label-text">How can we help ?</span>
+  </label>
+    <%= form.text_field :query,:authenticity_token => false, :class => "input input-bordered w-full",:placeholder => "What are you looking for ?" , :value => @query, data:{search_target:'inputsearch'} %>
+<% end %>
+
+  </div>
+   <div class="results">
+      <%= turbo_frame_tag "results" do %>
+        <%= render partial: 'partials/search_results', locals: { articles: @articles , query: @query} %>
+      <% end %>
+    </div>
+</div>
+
+
+

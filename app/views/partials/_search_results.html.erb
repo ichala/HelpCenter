@@ -1,0 +1,17 @@
+ <% if (@articles.length > 0) %>
+  <h1 class="display-5">Search Results :</h1>
+  <% @articles.each do |article| %>
+    <div class="card mt-3">
+      <div class="card-header">
+        <h5 class="card-title"><%= highlight(article.title, query) %></h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text"><%= highlight(article.body, query) %></p>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <div class="alert alert-danger" role="alert">
+    No Results Found
+  </div>
+<% end %>
